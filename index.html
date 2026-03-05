@@ -16,6 +16,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-family:  'arial', sans-serif;
         }
 
         body::-webkit-scrollbar {
@@ -23,8 +24,7 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 800px;
+            width: 90vw;
             background: white;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -51,7 +51,19 @@
             /* Tira o scroll interno do iframe */
             overflow: hidden; 
         }
-
+        span {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #f4f7f6;
+            background-color: #34495e;
+            padding: 10px 0;
+            a{
+                color: #f2d241;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
         footer {
             margin: 20px 0;
             font-size: 0.8rem;
@@ -83,6 +95,7 @@
         <div class="form-wrapper">
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdi0sBnkQfTMBM26HMIjlv2T6zlOp5L0nokDJQn2ujl8JBGsw/viewform?embedded=true" 
+                width="100%"
                 frameborder="0" 
                 marginheight="0" 
                 marginwidth="0">
@@ -90,6 +103,10 @@
             </iframe>
         </div>
 
+        <span>
+            Entre em contato com a equipe de TI em caso de Erros ou Dúvidas
+            whatsapp: <br><a href="https://wa.me/5581999999999" target="_blank">(81) 9 8928-9155</a>
+        </span>
         <footer>
             Conselho Recife Norte &copy; 2026
         </footer>
