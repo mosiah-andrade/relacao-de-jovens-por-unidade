@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levantamento CJAS 2026 - Conselho Recife Norte</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVKnYo5TzTUaoXEBf9EjmVjjKVZjwMYEXqw&s" type="image/x-icon">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* 1. Esconde a barra de rolagem global (Navegador) */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
             background-color: #f4f7f6;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+        }
+
+        body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
 
         .container {
@@ -23,46 +30,59 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-radius: 8px;
             text-align: center;
-        }
-
-        header {
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #2c3e50;
-            font-size: 1.5rem;
+            margin-top: 20px;
+            /* Garante que o container não crie scroll interno */
+            overflow: hidden; 
         }
 
         .form-wrapper {
             position: relative;
-            overflow: hidden;
             width: 100%;
-            padding-top: 50px; /* Espaçamento interno */
+            /* O segredo para o Google Forms não criar scroll interno: 
+               dar um "respiro" na altura ou garantir que o iframe seja grande o suficiente */
+            overflow: hidden; 
         }
 
         iframe {
             width: 100%;
-            max-width: 640px;
+            /* Aumentei ligeiramente a altura para garantir que o botão "Enviar" não seja cortado */
+            height: 1200px; 
             border: none;
+            /* Tira o scroll interno do iframe */
+            overflow: hidden; 
         }
 
         footer {
-            margin-top: 20px;
+            margin: 20px 0;
             font-size: 0.8rem;
             color: #7f8c8d;
+        }
+
+        /* Ajustes para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+                margin-top: 0;
+                border-radius: 0;
+                width: 100vw;
+                box-shadow: none;
+            }
+            
+            iframe {
+                /* Formulários tendem a esticar no mobile, aumentamos a altura aqui */
+                height: 1650px; 
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVKnYo5TzTUaoXEBf9EjmVjjKVZjwMYEXqw&s" height="85px" style="margin-bottom: 15px;">
+        
         <div class="form-wrapper">
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdi0sBnkQfTMBM26HMIjlv2T6zlOp5L0nokDJQn2ujl8JBGsw/viewform?embedded=true" 
-                width="100%" 
-                height="1150px" 
                 frameborder="0" 
                 marginheight="0" 
                 marginwidth="0">
